@@ -9,14 +9,17 @@ var LegendOptions = ['Other Company','Your Company'];
 
 //Data
 var d = [
+	//Other Companies data
 		  [
-			{axis:"Discover",content:"articles",value:0.19},
-			{axis:"Share",value:0.56},
+			{axis:"Discover",value:0.19},
 			{axis:"Act",value:0.42},
-		  ],[
+			{axis:"Share",value:0.56},
+		  ],
+//Your companies data
+			[
 			{axis:"Discover",value:0.48},
-			{axis:"Share",value:0.41},
 			{axis:"Act",value:0.27},
+			{axis:"Share",value:0.41},
 		  ]
 		];
 
@@ -49,9 +52,9 @@ var text = svg.append("text")
 	.attr('transform', 'translate(90,0)') 
 	.attr("x", w - 70)
 	.attr("y", 10)
-	.attr("font-size", "12px")
-	.attr("fill", "#404040")
-	.text("What % of owners use a specific service in a week");
+	.attr("fill", "#222222")
+	.attr("font-size","14px")
+	.text("What % of categories the app is used for");
 		
 //Initiate Legend	
 var legend = svg.append("g")
@@ -79,6 +82,6 @@ var legend = svg.append("g")
 	  .attr("x", w - 52)
 	  .attr("y", function(d, i){ return i * 20 + 9;})
 	  .attr("font-size", "11px")
-	  .attr("fill", "#737373")
+	  .attr("fill", "#222222")
 	  .text(function(d) { return d; })
 	  ;	

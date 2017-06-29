@@ -12,7 +12,7 @@ var RadarChart = {
   draw: function(id, d, options){
   var cfg = {
 	 radius: 5,
-	 w: 600,
+	 w: 700,
 	 h: 600,
 	 factor: 1,
 	 factorLegend: .85,
@@ -64,7 +64,7 @@ var RadarChart = {
 	   .attr("x2", function(d, i){return levelFactor*(1-cfg.factor*Math.sin((i+1)*cfg.radians/total));})
 	   .attr("y2", function(d, i){return levelFactor*(1-cfg.factor*Math.cos((i+1)*cfg.radians/total));})
 	   .attr("class", "line")
-	   .style("stroke", "grey")
+	   .style("stroke", "#222222")
 	   .style("stroke-opacity", "0.75")
 	   .style("stroke-width", "0.3px")
 	   .attr("transform", "translate(" + (cfg.w/2-levelFactor) + ", " + (cfg.h/2-levelFactor) + ")");
@@ -82,8 +82,9 @@ var RadarChart = {
 	   .attr("class", "legend")
 	   .style("font-family", "sans-serif")
 	   .style("font-size", "10px")
+		 .style("color", "white")
 	   .attr("transform", "translate(" + (cfg.w/2-levelFactor + cfg.ToRight) + ", " + (cfg.h/2-levelFactor) + ")")
-	   .attr("fill", "#737373")
+	   .attr("fill", "#222222")
 	   .text(Format((j+1)*cfg.maxValue/cfg.levels));
 	}
 	
@@ -102,7 +103,7 @@ var RadarChart = {
 		.attr("x2", function(d, i){return cfg.w/2*(1-cfg.factor*Math.sin(i*cfg.radians/total));})
 		.attr("y2", function(d, i){return cfg.h/2*(1-cfg.factor*Math.cos(i*cfg.radians/total));})
 		.attr("class", "line")
-		.style("stroke", "grey")
+		.style("stroke", "#222222")
 		.style("stroke-width", "1px");
 
 //adds data title (discover, share, act)
@@ -110,9 +111,11 @@ var RadarChart = {
 		.attr("class", "legend")
 		.text(function(d){return d})
 		.style("font-family", "sans-serif")
-		.style("font-size", "11px")
+		.style("font-size", "14px")
+		.attr("fill", "#222222")
+
 		.attr("text-anchor", "middle")
-		.attr("dy", "1.5em")
+		.attr("dy", "1.1em")
 		.attr("transform", function(d, i){return "translate(0, -10)"})
 		.attr("x", function(d, i){return cfg.w/2*(1-cfg.factorLegend*Math.sin(i*cfg.radians/total))-60*Math.sin(i*cfg.radians/total);})
 		.attr("y", function(d, i){return cfg.h/2*(1-Math.cos(i*cfg.radians/total))-20*Math.cos(i*cfg.radians/total);});
@@ -219,6 +222,9 @@ var RadarChart = {
 	tooltip = g.append('text')
 			   .style('opacity', 0)
 			   .style('font-family', 'sans-serif')
-			   .style('font-size', '13px');
+			   .style('font-size', '13px')
+				 .attr("fill", "#222222")
+
   }
 };
+
