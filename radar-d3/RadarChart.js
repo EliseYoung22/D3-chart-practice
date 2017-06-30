@@ -185,17 +185,33 @@ var RadarChart = {
 		})
 		.attr("data-id", function(j){return j.axis})
 		.style("fill", cfg.color(series)).style("fill-opacity", .9)
+		// .on('click', donut)
+		.on('click', function (d){
+			
+				tooltip
+					// .attr("rect")
+					.text(Format(d.videos))
+					.style()
+
+					console.log('videos',d.videos, 'articles',d.articles)
+					console.log('stepgoals', d.stepgoals,'goals', d.goalsmet)
+					console.log('articlesshared',d.articlesshared,'socialgroups', d.socialgroups)
+
+				})
 		.on('mouseover', function (d){
+			console.log('hello')
 					newX =  parseFloat(d3.select(this).attr('cx')) - 10;
 					newY =  parseFloat(d3.select(this).attr('cy')) - 5;
-					
+
 					tooltip
 						.attr('x', newX)
 						.attr('y', newY)
-						.text(Format(d.value, d.content))
-						// .text(text(d.content))
+						.text(Format(d.value))
 						.transition(200)
-						.style('opacity', 1);
+						.style('opacity', 1)
+						// .html(function(d) {
+    				// return "<strong>Frequency:</strong> <span style='color:red'>" + d.value + "</span>";
+ 	 					// });
 						
 					z = "polygon."+d3.select(this).attr("class");
 					g.selectAll("polygon")
@@ -228,3 +244,16 @@ var RadarChart = {
   }
 };
 
+
+function donut(d){
+	console.log('videos',d.videos, 'articles',d.articles);
+	console.log('stepgoals', d.stepgoals,'goals', d.goalsmet);
+	console.log('articlesshared',d.articlesshared,'socialgroups', d.socialgroups);
+	return "helllllo"
+}
+
+function donutData(d){
+	console.log('videos',d.videos, 'articles',d.articles);
+	console.log('stepgoals', d.stepgoals,'goals', d.goalsmet);
+	console.log('articlesshared',d.articlesshared,'socialgroups', d.socialgroups);
+}

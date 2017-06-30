@@ -11,15 +11,35 @@ var LegendOptions = ['Other Company','Your Company'];
 var d = [
 	//Other Companies data
 		  [
-			{axis:"Discover",value:0.19},
-			{axis:"Act",value:0.42},
-			{axis:"Share",value:0.56},
+			{axis:"Discover",
+			value:0.19, 
+			articles: 0.05,
+			videos: 0.14
+			},
+			{axis:"Act",
+			value:0.42,
+		  stepgoals: 24,
+			goalsmet:5},
+			{axis:"Share",
+			value:0.56,
+			articlesshared: 40,
+			socialgroups:5},
+			
 		  ],
 //Your companies data
 			[
-			{axis:"Discover",value:0.48},
-			{axis:"Act",value:0.27},
-			{axis:"Share",value:0.41},
+			{axis:"Discover",
+			value:0.48,
+			articles: 0.09,
+			videos: 0.4},
+			{axis:"Act",
+			value:0.27,
+			stepgoals: 6,
+			goalsmet:9},
+			{axis:"Share",
+			value:0.41,
+			articlesshared: 30,
+			socialgroups:10},
 		  ]
 		];
 
