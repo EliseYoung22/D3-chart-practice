@@ -24,6 +24,7 @@ var RadarChart = {
 	 TranslateX: 80,
 	 TranslateY: 30,
 	 ExtraWidthX: 100,
+	 roundStrokes: false,
 	 ExtraWidthY: 100,
 	 color: d3.scale.category10()
 	};
@@ -103,6 +104,7 @@ var RadarChart = {
 		.attr("x2", function(d, i){return cfg.w/2*(1-cfg.factor*Math.sin(i*cfg.radians/total));})
 		.attr("y2", function(d, i){return cfg.h/2*(1-cfg.factor*Math.cos(i*cfg.radians/total));})
 		.attr("class", "line")
+		
 		.style("stroke", "#222222")
 		.style("stroke-width", "1px");
 
