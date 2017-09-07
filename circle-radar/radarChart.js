@@ -38,6 +38,7 @@ function RadarChart(id, data, options) {
 		Format = d3.format('%'),			 	//Percentage formatting
 		angleSlice = Math.PI * 2 / total;		//The width in radians of each "slice"
 	
+
 	//Scale for the radius
 	var rScale = d3.scale.linear()
 		.range([0, radius])
@@ -97,7 +98,7 @@ function RadarChart(id, data, options) {
 	   .attr("x", 4)
 	   .attr("y", function(d){return -d*radius/cfg.levels;})
 	   .attr("dy", "0.4em")
-	   .style("font-size", "10px")
+	   .style("font-size", "12px")
 	   .attr("fill", "#737373")
 	   .text(function(d,i) { return Format(maxValue * d/cfg.levels); });
 
@@ -124,12 +125,12 @@ function RadarChart(id, data, options) {
 	//Append the labels at each axis
 	axis.append("text")
 		.attr("class", "legend")
-		.style("font-size", "11px")
-		.attr("text-anchor", "middle")
-		.attr("dy", "0.35em")
+		.style("font-size", "20px")//label font size
+		.attr("text-anchor", "middle")// label is directly in the middle of the axis
+		.attr("dy", "0.20em")//distance labels are from the line
 		.attr("x", function(d, i){ return rScale(maxValue * cfg.labelFactor) * Math.cos(angleSlice*i - Math.PI/2); })
 		.attr("y", function(d, i){ return rScale(maxValue * cfg.labelFactor) * Math.sin(angleSlice*i - Math.PI/2); })
-		.text(function(d){return d})
+		.text(function(d){return d})//gets the text
 		.call(wrap, cfg.wrapWidth);
 
 	/////////////////////////////////////////////////////////

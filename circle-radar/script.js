@@ -14,13 +14,13 @@
 
 			var data = [
 					  [//iPhone
-						{axis:"Discover",value:0.22},
-						{axis:"Share",value:0.28},
+						{axis:"Discover",value:0.48},
+						{axis:"Share",value:0.68},
 						{axis:"Act",value:0.29}		
 					  ],[//Samsung
 						{axis:"Discover",value:0.27},
-						{axis:"Share",value:0.16},
-						{axis:"Act",value:0.35},
+						{axis:"Share",value:0.77},
+						{axis:"Act",value:0.49},
 					  ],
 					];
 			////////////////////////////////////////////////////////////// 
@@ -43,27 +43,27 @@
 			RadarChart(".radarChart", data, radarChartOptions);
 
             //Chart Size
-var w = 500,
-	h = 500;
+// var w = 500,
+// 	h = 500;
 
-var colorscale = d3.scale.category10();
+// var colorscale = d3.scale.category10();
 
 //Legend titles
 var LegendOptions = ['Other Company','Your Company'];
 
 
 //Options for the Radar chart, other than default
-var mycfg = {
-  w: w,
-  h: h,
-  maxValue: 0.6,
-  levels: 6,
-  ExtraWidthX: 300
-}
+// var mycfg = {
+//   w: w,
+//   h: h,
+//   maxValue: 0.6,
+//   levels: 6,
+//   ExtraWidthX: 300
+// }
 
 //Call function to draw the Radar chart
 //Will expect that data is in %'s
-RadarChart.draw("#chart", d, mycfg);
+// RadarChart.draw("#chart", d, mycfg);
 
 ////////////////////////////////////////////
 /////////// Initiate legend ////////////////
